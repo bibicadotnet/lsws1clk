@@ -32,57 +32,5 @@ For Debian/Ubuntu Based Systems
 apt install git -y; git clone https://github.com/bibicadotnet/lsws1clk.git
 ```
 
-## Install
-### Pure LSWS 
-``` bash
-lsws1clk/lsws1clk.sh --pure
-```
-### Specified serial number 
-``` bash
-lsws1clk/lsws1clk.sh -L xxxxxxxxxxxxx
-```
-### WordPress
-``` bash
-lsws1clk/lsws1clk.sh -W
-```
-### Magento
-``` bash
-lsws1clk/lsws1clk.sh -M
-```
-### Magento + Sample data
-``` bash
-lsws1clk/lsws1clk.sh -M -S
-```
-### OpenCart
-``` bash
-lsws1clk/lsws1clk.sh -O
-```
-### PrestaShop
-``` bash
-lsws1clk/lsws1clk.sh -P
-```
-### Mautic
-``` bash
-lsws1clk/lsws1clk.sh --mautic
-```
-
-## Benchmark
-* Test client: 
-online tool - [load.io](https://loader.io/) with 5000 clients 
-
-* Test Server:
-[DigitalOcean](https://www.digitalocean.com/) $5 plan server
-
-* Target:
-WordPress v5.3 main page 
-
-* Result:
-5000 request per seconds without any error
-
-![](/img/loader-2.png)
-
-![](/img/loader-3.png)
-
-# Problems/Suggestions/Feedback/Contribution
-Please raise an issue on the repository, or send a PR for contributing. 
-
+lsws1clk/lsws1clk.sh -L ldmf-dUtk-XpDW-p3CU -W
+Thay ldmf-dUtk-XpDW-p3CU bằng license của bạn
