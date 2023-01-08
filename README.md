@@ -31,6 +31,7 @@ For Debian/Ubuntu Based Systems
 ```bash
 apt install git -y; git clone https://github.com/bibicadotnet/lsws1clk.git
 ```
+Cài đặt WordPress
 ```bash
 lsws1clk/lsws1clk.sh -L ldmf-dUtk-XpDW-p3CU -W
 ```
