@@ -24,12 +24,12 @@ The script come with trial license by default which has 15 days for free. After 
 ## Install Pre-Requisites
 For CentOS/RHEL Based Systems
 ```bash
-yum install git -y; git clone https://github.com/Code-Egg/lsws1clk.git
+yum install git -y; git clone https://github.com/bibicadotnet/lsws1clk.git
 ```
 
 For Debian/Ubuntu Based Systems
 ```bash
-apt install git -y; git clone https://github.com/Code-Egg/lsws1clk.git
+apt install git -y; git clone https://github.com/bibicadotnet/lsws1clk.git
 ```
 
 ## Install
