@@ -33,4 +33,4 @@ apt install git -y; git clone https://github.com/bibicadotnet/lsws1clk.git
 ```
 
 lsws1clk/lsws1clk.sh -L ldmf-dUtk-XpDW-p3CU -W
-Thay ldmf-dUtk-XpDW-p3CU bằng license của bạn
+
