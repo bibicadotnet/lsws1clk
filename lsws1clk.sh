@@ -1443,11 +1443,11 @@ landing_pg(){
 
 config_php(){
     echoG 'Updating PHP Paremeter'
-    NEWKEY='max_execution_time = 360'
+    NEWKEY='max_execution_time = 600'
     linechange 'max_execution_time' ${PHPINICONF} "${NEWKEY}"
-    NEWKEY='post_max_size = 100M'
+    NEWKEY='post_max_size = 100000M'
     linechange 'post_max_size' ${PHPINICONF} "${NEWKEY}"
-    NEWKEY='upload_max_filesize = 100M'
+    NEWKEY='upload_max_filesize = 100000M'
     linechange 'upload_max_filesize' ${PHPINICONF} "${NEWKEY}"
     NEWKEY="memory_limit = ${PHP_MEMORY}M"
     linechange 'memory_limit' ${PHPINICONF} "${NEWKEY}"
