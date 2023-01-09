@@ -878,14 +878,14 @@ centos_reinstall(){
 ubuntu_install_php(){
     echoG 'Install PHP & Packages for LSWS'
     ubuntu_reinstall "lsphp${PHPVER}"
-    for PKG in '' -common -curl -gd -json -mysql -imagick -imap -memcached -msgpack -redis -mcrypt -opcache -intl; do
+    for PKG in '' -common -gd -pdo -curl -mbstring -dbg -mysqlnd -bcmath -soap -dev -mcrypt -process -xml -xmlrpc -igbinary -imagick -imap -intl -ioncube -json -ldap -memcached -modules-source -msgpack -mysql -opcache -pear -pgsql -pspell -redis -snmp -sqlite3 -sybase -tidy; do
         /usr/bin/apt ${OPTIONAL} install -y lsphp${PHPVER}${PKG} >/dev/null 2>&1
     done
 }
 
 centos_install_php(){
     echoG 'Install PHP & Packages'
-    for PKG in '' -common -gd -pdo -imap -mbstring -imagick -mysqlnd -bcmath -soap -memcached -mcrypt -process -opcache -redis -json -xml -xmlrpc -intl; do
+    for PKG in '' -common -gd -pdo -curl -mbstring -dbg -mysqlnd -bcmath -soap -dev -mcrypt -process -xml -xmlrpc -igbinary -imagick -imap -intl -ioncube -json -ldap -memcached -modules-source -msgpack -mysql -opcache -pear -pgsql -pspell -redis -snmp -sqlite3 -sybase -tidy; do
         /usr/bin/yum install lsphp${PHPVER}${PKG} -y >/dev/null 2>&1
     done
 
