@@ -4,7 +4,7 @@
 # WordPress Latest 
 # Magento stable
 # LSCache Latest 
-# PHP 7.4
+# PHP 8.1
 # Memcached stable
 # Redis stable
 # PHPMyAdmin Latest
@@ -1449,7 +1449,7 @@ config_php(){
     linechange 'post_max_size' ${PHPINICONF} "${NEWKEY}"
     NEWKEY='upload_max_filesize = 100000M'
     linechange 'upload_max_filesize' ${PHPINICONF} "${NEWKEY}"
-    NEWKEY="memory_limit = 192M'
+    NEWKEY="memory_limit = ${PHP_MEMORY}M"
     linechange 'memory_limit' ${PHPINICONF} "${NEWKEY}"
     ln -s /usr/local/lsws/lsphp${PHPVER}/bin/php /usr/bin/php
     killall lsphp >/dev/null 2>&1 
