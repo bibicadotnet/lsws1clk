@@ -4,7 +4,7 @@
 # WordPress Latest 
 # Magento stable
 # LSCache Latest 
-# PHP 8.1
+# PHP 7.4
 # Memcached stable
 # Redis stable
 # PHPMyAdmin Latest
