@@ -1443,6 +1443,8 @@ landing_pg(){
 
 config_php(){
     echoG 'Updating PHP Paremeter'
+    EWKEY='disable_functions = '
+    linechange 'disable_functions' ${PHPINICONF} "${NEWKEY}"
     NEWKEY='max_execution_time = 600'
     linechange 'max_execution_time' ${PHPINICONF} "${NEWKEY}"
     NEWKEY='post_max_size = 100000M'
