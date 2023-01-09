@@ -1443,6 +1443,18 @@ landing_pg(){
 
 config_php(){
     echoG 'Updating PHP Paremeter'
+    EWKEY='opcache.enable=1'
+    linechange 'opcache.enable' ${PHPINICONF} "${NEWKEY}"
+    EWKEY='opcache.enable_cli=1'
+    linechange 'opcache.enable_cli' ${PHPINICONF} "${NEWKEY}"
+    EWKEY='opcache.memory_consumption=128'
+    linechange 'opcache.memory_consumption' ${PHPINICONF} "${NEWKEY}"
+    EWKEY='opcache.interned_strings_buffer=16'
+    linechange 'opcache.interned_strings_buffer' ${PHPINICONF} "${NEWKEY}"
+    EWKEY='opcache.max_accelerated_files=100000'
+    linechange 'opcache.max_accelerated_files' ${PHPINICONF} "${NEWKEY}"
+    EWKEY='opcache.max_wasted_percentage=10'
+    linechange 'opcache.max_wasted_percentage' ${PHPINICONF} "${NEWKEY}"
     EWKEY='disable_functions = '
     linechange 'disable_functions' ${PHPINICONF} "${NEWKEY}"
     NEWKEY='max_execution_time = 600'
