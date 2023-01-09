@@ -885,7 +885,7 @@ ubuntu_install_php(){
 
 centos_install_php(){
     echoG 'Install PHP & Packages'
-    for PKG in '' -common -gd -pdo -imap -mbstring -imagick -mysqlnd -bcmath -soap -memcached -mcrypt -process -opcache -redis -json -xml -xmlrpc -intl; do
+    for PKG in '' -common -gd -pdo -curl -mbstring -dbg -mysqlnd -bcmath -soap -dev -mcrypt -process -xml -xmlrpc -igbinary -imagick -imap -intl -ioncube -json -ldap -memcached -modules-source -msgpack -mysql -opcache -pear -pgsql -pspell -redis -snmp -sqlite3 -sybase -tidy; do
         /usr/bin/yum install lsphp${PHPVER}${PKG} -y >/dev/null 2>&1
     done
 
