@@ -4,7 +4,7 @@
 # WordPress Latest 
 # Magento stable
 # LSCache Latest 
-# PHP 8.1
+# PHP 7.4
 # Memcached stable
 # Redis stable
 # PHPMyAdmin Latest
@@ -885,7 +885,7 @@ ubuntu_install_php(){
 
 centos_install_php(){
     echoG 'Install PHP & Packages'
-    for PKG in '' -common -gd -pdo -curl -mbstring -dbg -mysqlnd -bcmath -soap -dev -mcrypt -process -xml -xmlrpc -igbinary -imagick -imap -intl -ioncube -json -ldap -memcached -modules-source -msgpack -mysql -opcache -pear -pgsql -pspell -redis -snmp -sqlite3 -sybase -tidy; do
+    for PKG in '' -common -gd -pdo -imap -mbstring -imagick -mysqlnd -bcmath -soap -memcached -mcrypt -process -opcache -redis -json -xml -xmlrpc -intl; do
         /usr/bin/yum install lsphp${PHPVER}${PKG} -y >/dev/null 2>&1
     done
 
@@ -1443,20 +1443,6 @@ landing_pg(){
 
 config_php(){
     echoG 'Updating PHP Paremeter'
-    EWKEY='opcache.enable=1'
-    linechange 'opcache.enable' ${PHPINICONF} "${NEWKEY}"
-    EWKEY='opcache.enable_cli=1'
-    linechange 'opcache.enable_cli' ${PHPINICONF} "${NEWKEY}"
-    EWKEY='opcache.memory_consumption=128'
-    linechange 'opcache.memory_consumption' ${PHPINICONF} "${NEWKEY}"
-    EWKEY='opcache.interned_strings_buffer=16'
-    linechange 'opcache.interned_strings_buffer' ${PHPINICONF} "${NEWKEY}"
-    EWKEY='opcache.max_accelerated_files=100000'
-    linechange 'opcache.max_accelerated_files' ${PHPINICONF} "${NEWKEY}"
-    EWKEY='opcache.max_wasted_percentage=10'
-    linechange 'opcache.max_wasted_percentage' ${PHPINICONF} "${NEWKEY}"
-    EWKEY='disable_functions = '
-    linechange 'disable_functions' ${PHPINICONF} "${NEWKEY}"
     NEWKEY='max_execution_time = 600'
     linechange 'max_execution_time' ${PHPINICONF} "${NEWKEY}"
     NEWKEY='post_max_size = 100000M'
