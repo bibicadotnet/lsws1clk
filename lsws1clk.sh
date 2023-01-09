@@ -878,14 +878,14 @@ centos_reinstall(){
 ubuntu_install_php(){
     echoG 'Install PHP & Packages for LSWS'
     ubuntu_reinstall "lsphp${PHPVER}"
-    for PKG in '' -common -curl -dbg -dev -igbinary -imagick -imap -intl -ioncube -json -ldap -memcached -modules-source -msgpack -mysql -opcache -pear -pgsql -pspell -redis -snmp -sqlite3 -sybase -tidy; do
+    for PKG in '' -common -curl -gd -json -mysql -imagick -imap -memcached -msgpack -redis -mcrypt -opcache -intl; do
         /usr/bin/apt ${OPTIONAL} install -y lsphp${PHPVER}${PKG} >/dev/null 2>&1
     done
 }
 
 centos_install_php(){
     echoG 'Install PHP & Packages'
-    for PKG in '' -common -curl -dbg -dev -igbinary -imagick -imap -intl -ioncube -json -ldap -memcached -modules-source -msgpack -mysql -opcache -pear -pgsql -pspell -redis -snmp -sqlite3 -sybase -tidy; do
+    for PKG in '' -common -gd -pdo -imap -mbstring -imagick -mysqlnd -bcmath -soap -memcached -mcrypt -process -opcache -redis -json -xml -xmlrpc -intl; do
         /usr/bin/yum install lsphp${PHPVER}${PKG} -y >/dev/null 2>&1
     done
 
@@ -1443,11 +1443,11 @@ landing_pg(){
 
 config_php(){
     echoG 'Updating PHP Paremeter'
-    NEWKEY='max_execution_time = 600'
+    NEWKEY='max_execution_time = 360'
     linechange 'max_execution_time' ${PHPINICONF} "${NEWKEY}"
-    NEWKEY='post_max_size = 100000M'
+    NEWKEY='post_max_size = 100M'
     linechange 'post_max_size' ${PHPINICONF} "${NEWKEY}"
-    NEWKEY='upload_max_filesize = 100000M'
+    NEWKEY='upload_max_filesize = 100M'
     linechange 'upload_max_filesize' ${PHPINICONF} "${NEWKEY}"
     NEWKEY="memory_limit = ${PHP_MEMORY}M"
     linechange 'memory_limit' ${PHPINICONF} "${NEWKEY}"
